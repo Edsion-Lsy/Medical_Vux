@@ -70,35 +70,35 @@ export default {
     
         async loadDictionary(){
             let self=this;
-            this.baseAjax({   //IsHandover 交接单 
-                url:'Medical/Medical/VuxGetManagerDictioninary',
-                showLoading:true,
-                type:'post',
-                data:{TypeCode:'IsHandover'},
-                success:function(data){
-                    self.IsHandoverList=  data.map(function(item) {
-                        return {
-                            name: item.value,
-                            value: item.value
-                        }
-                    });
-                }
-            })
+            // this.baseAjax({   //IsHandover 交接单 
+            //     url:'Medical/Medical/VuxGetManagerDictioninary',
+            //     showLoading:true,
+            //     type:'post',
+            //     data:{TypeCode:'IsHandover'},
+            //     success:function(data){
+            //         self.IsHandoverList=  data.map(function(item) {
+            //             return {
+            //                 name: item.value,
+            //                 value: item.value
+            //             }
+            //         });
+            //     }
+            // })
 
-            this.baseAjax({   //IsPTBook 告知书 
-                url:'Medical/Medical/VuxGetManagerDictioninary',
-                showLoading:true,
-                type:'post',
-                data:{TypeCode:'IsPTBook'},
-                success:function(data){
-                    self.IsPTBookList=  data.map(function(item) {
-                        return {
-                            name: item.value,
-                            value: item.value
-                        }
-                    });
-                }
-            })
+            // this.baseAjax({   //IsPTBook 告知书 
+            //     url:'Medical/Medical/VuxGetManagerDictioninary',
+            //     showLoading:true,
+            //     type:'post',
+            //     data:{TypeCode:'IsPTBook'},
+            //     success:function(data){
+            //         self.IsPTBookList=  data.map(function(item) {
+            //             return {
+            //                 name: item.value,
+            //                 value: item.value
+            //             }
+            //         });
+            //     }
+            // })
         },
 
         Getinfo() {//初始化赋值方法

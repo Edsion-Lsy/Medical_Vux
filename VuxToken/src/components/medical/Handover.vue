@@ -6,8 +6,8 @@
   </x-header>
 </div>
         <group style="margin-top: 3em;">
-          <popup-picker title="告知书" :data="[IsPTBookList]"     :class="!$v.MainData.IsPTBook.required?'red':'black'"      v-model="MainData.IsPTBook" value-text-align="center"></popup-picker>
-          <popup-picker title="交接单" :data="[IsHandoverList]"   :class="!$v.MainData.IsHandover.required?'red':'black'"      v-model="MainData.IsHandover" value-text-align="center"></popup-picker>
+          <popup-picker title="告知书" :data="[baseFun.localGetDictioninary('IsPTBook','value')]"     :class="!$v.MainData.IsPTBook.required?'red':'black'"      v-model="MainData.IsPTBook" value-text-align="center"></popup-picker>
+          <popup-picker title="交接单" :data="[baseFun.localGetDictioninary('IsHandover','value')]"   :class="!$v.MainData.IsHandover.required?'red':'black'"      v-model="MainData.IsHandover" value-text-align="center"></popup-picker>
 
 
         </group>

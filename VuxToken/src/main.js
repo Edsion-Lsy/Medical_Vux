@@ -133,14 +133,18 @@ axios.interceptors.request.use(function (config) {
       // if (config.method === 'post') {
       //     config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
       // }
-    
-
+      if(process.env.NODE_ENV === 'production'){
         config.headers['Token'] = JSON.stringify(JSON.parse(dsBridge.call("userApi.getLoginedUser")).padUser).toUpperCase().replace('\"',"").replace('\"',"");
-       config.headers['ID'] = JSON.stringify(JSON.parse(dsBridge.call("userApi.getLoginedUser")).UserInfo.W.ID);
+        config.headers['ID'] = JSON.stringify(JSON.parse(dsBridge.call("userApi.getLoginedUser")).UserInfo.W.ID);
+      
+      }else{
+        config.headers['Token'] = "309209D0-2C10-406D-881D-925DB12635EC";//调试可用此
+        config.headers['ID'] = "102727";
+      }
+
        //config.headers['Token'] = "C60E403F-00E6-4EB3-8DCA-52A751FEA968";//调试可用此
        
-      //config.headers['Token'] = "309209D0-2C10-406D-881D-925DB12635EC";//调试可用此
-      //config.headers['ID'] = "102727";
+    
     return config;
 }, function (error) {
    // Do something with request error

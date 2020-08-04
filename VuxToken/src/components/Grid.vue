@@ -465,7 +465,8 @@ export default {
             }
         })
         this.baseAjax({ 
-            url:'Medical/Medical/VuxGetManagerDictioninaryAll',
+            url:'Medical/Medical/VuxGetManagerDictioninaryAll', 
+            //M_Dictioninary
             showLoading:false,
             type:'post',
             success:function(data){
